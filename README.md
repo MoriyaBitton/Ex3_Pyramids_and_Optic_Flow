@@ -37,7 +37,8 @@ Ex3_Pyramids_and_Optic_Flow/
 
 Function:
 ```python
-opticalFlow(img1, img2, step_size, win_size)```
+opticalFlow(img1, img2, step_size, win_size)
+```
 
 
 This function estimates motion between two images using the **Lucas–Kanade optical flow algorithm**.

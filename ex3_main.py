@@ -63,7 +63,7 @@ def pyrLaplacianDemo(img_path):
     lap_pyr = laplaceianReduce(img, lvls)
     re_lap = laplaceianExpand(lap_pyr)
 
-    f, ax = plt.subplots(2, lvls + 1)
+    f, ax = plt.subplots(2, lvls + 1, figsize=(20,5))
     plt.gray()
     for i in range(lvls):
         ax[0, i].imshow(lap_pyr[i])

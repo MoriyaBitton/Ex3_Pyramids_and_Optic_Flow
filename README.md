@@ -54,9 +54,9 @@ The output is a set of motion vectors describing the displacement between the tw
 
 ### Gaussian Pyramid
 
-Function:
+```python
 gaussianPyr(img, levels)
-
+```
 
 A Gaussian pyramid represents an image at multiple resolutions.
 
@@ -70,10 +70,10 @@ This produces progressively smaller images while preserving the overall structur
 
 ### Laplacian Pyramid
 
-Functions:
+```python
 laplaceianReduce(img, levels)
 laplaceianExpand(pyramid)
-
+```
 
 The Laplacian pyramid captures image details between Gaussian pyramid levels.
 
@@ -91,9 +91,9 @@ The original image can later be reconstructed using `laplaceianExpand`.
 
 ### Pyramid Image Blending
 
-Function:
+```python
 pyrBlend(img1, img2, mask, levels)
-
+```
 
 This function blends two images using a mask and pyramid blending.
 

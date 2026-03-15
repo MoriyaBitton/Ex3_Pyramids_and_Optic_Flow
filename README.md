@@ -17,8 +17,6 @@ The goal is to demonstrate how **multi-scale image representations** can be used
 
 ## Repository Structure
 
-## Repository Structure
-
 ```
 Ex3_Pyramids_and_Optic_Flow/
 |
@@ -39,7 +37,6 @@ Ex3_Pyramids_and_Optic_Flow/
 opticalFlow(img1, img2, step_size, win_size)
 ```
 
-
 This function estimates motion between two images using the **Lucas–Kanade optical flow algorithm**.
 
 The algorithm:
@@ -49,6 +46,8 @@ The algorithm:
 3. Solves a least squares problem to estimate motion vectors
 
 The output is a set of motion vectors describing the displacement between the two images.
+
+![Optical Flow Result](result/lk_demo.png)
 
 ---
 
@@ -65,6 +64,8 @@ Each level:
 - Downsamples the image by a factor of 2
 
 This produces progressively smaller images while preserving the overall structure of the original image.
+
+![Gaussian Pyramid](result/gaussian_pyramid.png)
 
 ---
 
@@ -87,6 +88,8 @@ This stores the high-frequency details of the image.
 
 The original image can later be reconstructed using `laplaceianExpand`.
 
+![Laplacian Pyramid](result/laplacian_pyramid.png)
+
 ---
 
 ### Pyramid Image Blending
@@ -106,50 +109,25 @@ Steps:
 
 This technique avoids sharp seams between the images.
 
+![Blend Demo](result/blend_demo.png)
+
+![Final Blended Image](result/sunset_cat.png)
+
 ---
 
-## Running the Project
+## Run the Project
 
-Run the demo script:
+Install dependencies:
 
+```bash
+pip install numpy opencv-python scipy matplotlib
+```
+
+Run the program:
+
+```bash
 python main.py
-
-
-The program demonstrates:
-
-- Optical flow estimation
-- Gaussian pyramid visualization
-- Laplacian pyramid reconstruction
-- Pyramid image blending
-
----
-
-## Output
-
-Generated images are saved in the `result/` folder.
-
-Examples include:
-
-- Optical flow visualization
-- Gaussian pyramid
-- Laplacian pyramid
-- Blended images
-
----
-
-## Dependencies
-
-Install required packages:
-
-pip install numpy opencv-python matplotlib
-
-
----
-
-## Author
-
-Moriya Bitton
-
+```
 
 -------------------------------------------------------
 

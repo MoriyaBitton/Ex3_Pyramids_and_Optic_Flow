@@ -63,7 +63,7 @@ Each level:
 - Applies Gaussian smoothing
 - Downsamples the image by a factor of 2
 
-This produces progressively smaller images while preserving the overall structure of the original image.
+This produces progressively smaller images while preserving the original image's overall structure.
 
 ![Gaussian Pyramid](result/gaussian_pyramid.png)
 

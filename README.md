@@ -35,7 +35,7 @@ Ex3_Pyramids_and_Optic_Flow/
 
 ### Optical Flow (Lucas–Kanade)
 
-```
+```python
 opticalFlow(img1, img2, step_size, win_size)
 ```
 

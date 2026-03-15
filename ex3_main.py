@@ -2,9 +2,13 @@ import numpy as np
 import cv2
 from numpy.linalg import LinAlgError
 import matplotlib.pyplot as plt
+import os
+
 
 from ex3_utils import *
 import time
+
+os.makedirs("result", exist_ok=True)
 
 
 def lkDemo(img_path):
@@ -25,7 +29,7 @@ def lkDemo(img_path):
 def displayOpticalFlow(img: np.ndarray, pts: np.ndarray, uvs: np.ndarray):
     plt.imshow(img, cmap='gray')
     plt.quiver(pts[:, 0], pts[:, 1], uvs[:, 0], uvs[:, 1], color='r')
-
+    plt.savefig("result/lk_demo.png")
     plt.show()
 
 
@@ -47,6 +51,7 @@ def pyrGaussianDemo(img_path):
         canvas[:h, widths[lv_idx]:widths[lv_idx + 1], :] = gau_pyr[lv_idx]
 
     plt.imshow(canvas)
+    plt.savefig("result/gaussian_pyramid.png")
     plt.show()
 
 
@@ -67,6 +72,8 @@ def pyrLaplacianDemo(img_path):
     ax[0, -1].set_title('Original Image')
     ax[0, -1].imshow(re_lap)
     ax[1, -1].hist(re_lap.ravel(), 256, [0, 1])
+
+    plt.savefig("result/laplacian_pyramid.png")
     plt.show()
 
 
@@ -85,9 +92,10 @@ def blendDemo():
     ax[1, 1].imshow(np.abs(n_blend - im_blend))
     ax[1, 2].imshow(im_blend)
 
+    plt.savefig("result/blend_demo.png")
     plt.show()
 
-    cv2.imwrite('sunset_cat.png', cv2.cvtColor((im_blend * 255).astype(np.uint8), cv2.COLOR_RGB2BGR))
+    cv2.imwrite('result/sunset_cat.png', cv2.cvtColor((im_blend * 255).astype(np.uint8), cv2.COLOR_RGB2BGR))
 
 
 def main():
